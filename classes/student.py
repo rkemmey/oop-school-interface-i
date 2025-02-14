@@ -10,8 +10,8 @@ class Student(Person):
     @classmethod
     def all_students(cls):
         container = []
-        with open('.data/students.csv', 'r') as file:
-            reader = csv.DictReader
+        with open('./data/students.csv', 'r') as file:
+            reader = csv.DictReader(file)
             for row in reader:
                 container.append(cls(**row))
         return container
